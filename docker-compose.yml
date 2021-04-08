@@ -13,4 +13,4 @@ services:
         network_mode: host
         restart: unless-stopped
         environment:
-            USE_SCHEDULER: scheduler:8765
+            USE_SCHEDULER: scheduler
