@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+    scheduler:
+        image: cbarraco/icecc-scheduler
+        network_mode: host
+        restart: unless-stopped
+
+    daemon:
+        image: cbarraco/icecc-daemon
+        depends_on:
+            - scheduler
+        network_mode: host
+        restart: unless-stopped
+        environment:
+            USE_SCHEDULER: scheduler:8765
